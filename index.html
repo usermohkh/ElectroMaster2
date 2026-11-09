@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="ElectroMaster - Offline electronics encyclopedia and repair learning app">
+  <title>ElectroMaster</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="ElectroMaster home">
+      <span class="brand-icon">E<span>+</span></span>
+      <span><b>ElectroMaster</b><small data-i18n="tagline">دانشنامه و دستیار تعمیرات الکترونیک</small></span>
+    </a>
+    <div class="top-actions">
+      <span class="offline"><i></i><span data-i18n="offline">آفلاین</span></span>
+      <button id="langBtn" class="icon-btn" aria-label="Change language">EN</button>
+    </div>
+  </header>
+
+  <main id="app">
+    <section class="hero">
+      <div class="hero-glow"></div>
+      <div class="hero-content">
+        <p class="eyebrow" data-i18n="heroEyebrow">مرجع تخصصی الکترونیک</p>
+        <h1 data-i18n="heroTitle">بشناس، اندازه بگیر،<br><em>عیب‌یابی کن.</em></h1>
+        <p class="hero-copy" data-i18n="heroCopy">دانشنامه قطعات، آموزش ابزارهای اندازه‌گیری و راهنمای عیب‌یابی؛ همیشه همراهت، حتی بدون اینترنت.</p>
+        <div class="hero-buttons">
+          <button class="btn primary" data-go="parts" data-i18n="exploreParts">جستجوی قطعات</button>
+          <button class="btn ghost" data-go="learn" data-i18n="startLearning">شروع آموزش</button>
+        </div>
+      </div>
+      <div class="circuit-art" aria-hidden="true">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="chip"><span>EM</span><i></i><i></i><i></i><i></i></div>
+        <b class="node n1"></b><b class="node n2"></b><b class="node n3"></b>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div><b id="partCount">15+</b><span data-i18n="partsLabel">گروه قطعات</span></div>
+      <div><b id="lessonCount">8+</b><span data-i18n="lessonsLabel">درس کاربردی</span></div>
+      <div><b>100%</b><span data-i18n="offlineLabel">قابل استفاده آفلاین</span></div>
+    </section>
+
+    <section class="section-head">
+      <div><p class="eyebrow" data-i18n="workspace">فضای کار</p><h2 data-i18n="quickAccess">دسترسی سریع</h2></div>
+    </section>
+    <section class="feature-grid">
+      <button class="feature-card" data-go="parts"><span class="feature-icon cyan">⌁</span><b data-i18n="encyclopedia">دانشنامه قطعات</b><small data-i18n="encyclopediaSub">پایه‌ها، کاربرد، مشخصات و تست</small><span class="arrow">↗</span></button>
+      <button class="feature-card" data-go="learn"><span class="feature-icon violet">▤</span><b data-i18n="training">آموزش تعمیرات</b><small data-i18n="trainingSub">از مبانی تا عیب‌یابی برد</small><span class="arrow">↗</span></button>
+      <button class="feature-card" data-go="tools"><span class="feature-icon amber">⌗</span><b data-i18n="calculators">ابزارهای محاسباتی</b><small data-i18n="calculatorsSub">قانون اهم و تقسیم ولتاژ</small><span class="arrow">↗</span></button>
+      <button class="feature-card" data-go="safety"><span class="feature-icon green">盾</span><b data-i18n="safety">ایمنی کارگاه</b><small data-i18n="safetySub">نکات مهم پیش از اندازه‌گیری</small><span class="arrow">↗</span></button>
+    </section>
+
+    <section id="contentPanel" class="content-panel">
+      <div class="section-head panel-head">
+        <div><p class="eyebrow" data-i18n="library">کتابخانه</p><h2 id="panelTitle" data-i18n="popularParts">قطعات پرکاربرد</h2></div>
+        <button id="backHome" class="text-btn hidden" data-i18n="backHome">بازگشت</button>
+      </div>
+      <div id="searchWrap" class="search-wrap">
+        <span>⌕</span><input id="searchInput" type="search" data-i18n-placeholder="searchPlaceholder" placeholder="نام قطعه یا کلیدواژه را جستجو کن...">
+        <kbd>⌘ K</kbd>
+      </div>
+      <div id="resultList" class="result-list"></div>
+      <div id="detailView" class="detail-view hidden"></div>
+    </section>
+  </main>
+
+  <footer><span class="brand-mini">E+</span><span>ElectroMaster <small>v1.1 • Offline-first</small></span><span class="footer-note" data-i18n="footerNote">ساخته‌شده برای یادگیری ایمن و دقیق</span></footer>
+  <nav class="bottom-nav" aria-label="Main navigation">
+    <button class="nav-item active" data-go="home"><span>⌂</span><small data-i18n="home">خانه</small></button>
+    <button class="nav-item" data-go="parts"><span>⌘</span><small data-i18n="parts">قطعات</small></button>
+    <button class="nav-item" data-go="learn"><span>▤</span><small data-i18n="learn">آموزش</small></button>
+    <button class="nav-item" data-go="tools"><span>⌗</span><small data-i18n="tools">ابزارها</small></button>
+  </nav>
+  <script src="app.js"></script>
+</body>
+</html>
